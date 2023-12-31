@@ -144,9 +144,9 @@
                                         </div>
                                         <div class="profile-head">
                                             <a href="javascript:void(0)">
-                                                <h5>Kevin Martin</h5>
+                                                <h5>{{account.user.username}}</h5>
                                             </a>
-                                            <p class="wallet-id">Wallet ID: 6264849965</p>
+                                            <p class="wallet-id"><small>Account No: {{account.account_number}}</small></p>
                                         </div>
                                     </div>
                                     <ul>
@@ -226,7 +226,7 @@
                         </ul>
                         <ul class="bottom-item">
                             <li class="active">
-                                <a href="account.html">
+                                <a href="{% url 'account:account' %}">
                                     <img src="{% static 'assets/images/icon/account.png' %}" alt="Account">
                                     <span>Account</span>
                                 </a>
@@ -256,6 +256,17 @@
                 </div>
             </div>
         </div>
+        {% if messages %}
+            
+        {% for message in  messages %}
+            <div class=" alert alert-{{message.tags}}">
+                <strong>{{ message }}</strong>
+            </div>   
+        {% endfor %}
+            
+        
+    {% endif %}
+        
     </header>
     <!-- header-section end -->
 

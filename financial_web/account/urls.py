@@ -4,5 +4,6 @@ from account import views
 app_name = "account"
 
 urlpatterns = [
+    path("", views.account, name="account"),
     path("kyc-form/", views.kyc_registration_view, name="kyc-form")
 ]

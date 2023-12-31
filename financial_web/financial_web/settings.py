@@ -136,12 +136,17 @@ AUTH_USER_MODEL = "userauth.User"
 
 # for uploaded images
 MEDIA_URL = 'media/'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# login urls
+LOGIN_URL = "userauth:sign-in"
+LOGIN_REDIRECT_URL = "userauth:sign-in"
+LOGOUT_REDIRECT_URL = "userauth:sign-in"
 
 
 # jazzmin settings
